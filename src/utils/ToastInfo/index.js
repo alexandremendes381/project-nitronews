@@ -11,8 +11,6 @@ export const toastInfo = (message) => {
         didOpen: (toast) => {
             toast.addEventListener('mouseenter', Swal.stopTimer)
             toast.addEventListener('mouseleave', Swal.resumeTimer)
-            toast.style.fontSize = '14px';
-            toast.style.maxWidth = '200px';
         },
     });
     Toast.fire({

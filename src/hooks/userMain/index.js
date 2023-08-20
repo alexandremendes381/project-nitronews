@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { toastInfo, toastSuccess } from '../../utils/ToastInfo';
 import axios from 'axios';
 import * as yup from "yup";
@@ -6,7 +6,6 @@ import * as yup from "yup";
 
 function UseMain() {
     const [encomenda, setEncomenda] = useState(null);
-    const [isPurpleMode, setIsPurpleMode] = useState(false);
     const [isValidateMode, setIsValidateMode] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -15,18 +14,6 @@ function UseMain() {
         setTimeout(() => {
             setIsLoading(false);
         }, 2000);
-    };
-
-    useEffect(() => {
-        if (isPurpleMode) {
-            document.documentElement.classList.add('night-mode');
-        } else {
-            document.documentElement.classList.remove('night-mode');
-        }
-    }, [isPurpleMode]);
-
-    const toggleDarkMode = () => {
-        setIsPurpleMode(!isPurpleMode);
     };
 
     const validationSchema = yup.object().shape({
@@ -67,9 +54,7 @@ function UseMain() {
 
     return {
         encomenda,
-        toggleDarkMode,
         handleSearch,
-        isPurpleMode,
         validationSchema,
         isValidateMode,
         isLoading,

@@ -3,7 +3,7 @@ import styles from './index.module.scss';
 import lupa from '../../assets/logos/lupa.png';
 import Inputmask from 'inputmask';
 
-const Input = ({ label, className, placeholder, onSearch, isPurpleMode }) => {
+const Input = ({ label, placeholder, onSearch }) => {
     const [inputValue, setInputValue] = useState('');
 
     useEffect(() => {
@@ -31,7 +31,6 @@ const Input = ({ label, className, placeholder, onSearch, isPurpleMode }) => {
             <div className={styles.inputLabel}>
                 <label
                     htmlFor="input-field"
-                    className={isPurpleMode ? styles.purpleLabel : ''}
                 >
                     {label}
                 </label>
@@ -44,12 +43,11 @@ const Input = ({ label, className, placeholder, onSearch, isPurpleMode }) => {
                     onChange={() => { }}
                     handleKeyPress={handleKeyPress}
                     placeholder={placeholder}
-                    className={`${styles.roundedInput} ${className} ${isPurpleMode ? styles.purpleInput : ''
-                        }`}
+                    className={styles.roundedInput} 
                 />
                 <button
                     type="button"
-                    className={`${styles.searchButton} ${isPurpleMode ? styles.purpleSearchButton : ''}`}
+                    className={styles.searchButton}
                     onClick={handleSearchClick}
                 >
                     <img src={lupa} alt="Buscar" />
