@@ -30,7 +30,7 @@ function Main() {
             </div>
             <div className={styles.checkboxesContainer}>
                 <div>
-                    <Tooltip text="Auterar Cores" isPurpleMode={isPurpleMode}>
+                    <Tooltip text="Alterar Cores" isPurpleMode={isPurpleMode}>
                         <InputCheckbox
                             id="night-mode"
                             className="lamp"
