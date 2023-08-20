@@ -1,0 +1,104 @@
+
+
+.spanscontainerone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+    gap: 32px;
+}
+
+.spanscontainerone .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.spanscontainerone .row>div {
+    max-width: 180px;
+    width: 45%;
+}
+
+.spanscontainerone h1 {
+    color: rgb(0, 138, 207);
+    font-size: 20px;
+    margin: 0;
+}
+
+.spanscontainerone span {
+    color: rgb(0, 138, 207);
+    font-size: 16px;
+    margin: 0;
+}
+
+.spanscontainerone .row>div+div {
+    margin-top: 20px;
+}
+
+.rowContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.styleh1 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+
+.stylesh1 {
+    margin-top: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+
+@media (max-width: 768px) {
+    .containerImg {
+        margin-top: 20px;
+    }
+
+    .container {
+        margin-top: 15px;
+    }
+
+    .spanscontainerone .row {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .spanscontainer .row {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    .checkboxesContainer {
+        margin-left: 0;
+    }
+
+    input[role=switch]:checked::before {
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .spanscontainerone {
+        justify-content: center;
+        align-items: center;
+
+    }
+}
+
+
+@media (max-width: 768px) {
+    .valorpedido {
+        display: none;
+    }
+}

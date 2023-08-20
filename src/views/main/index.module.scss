@@ -1,0 +1,34 @@
+/* index.module.scss */
+
+.containerImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.centeredContent {
+    text-align: center;
+}
+
+.customInput {
+    width: 300px;
+}
+
+.logo {
+    filter: invert(500%);
+}
+
+.checkboxesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 265px;
+}
