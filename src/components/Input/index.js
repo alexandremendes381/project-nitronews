@@ -47,7 +47,7 @@ const Input = ({ label, placeholder, onSearch }) => {
                 />
                 <button
                     type="button"
-                    className={styles.searchButton}
+                    className={`${styles.searchButton} ${styles.purpleSearchButton}`}
                     onClick={handleSearchClick}
                 >
                     <img src={lupa} alt="Buscar" />
