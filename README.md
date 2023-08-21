@@ -1,3 +1,8 @@
+# Project Name
+
+This project is organized into three branches: `main`, `dev/green`, and `dev/purple`. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
