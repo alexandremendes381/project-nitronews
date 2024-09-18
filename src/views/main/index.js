@@ -1,13 +1,13 @@
+import React, { useState } from 'react';
 import Input from '../../components/Input';
 import styles from './index.module.scss';
 import logo from '../../assets/images/logo.png';
 import logoPurple from '../../assets/images/logoPurple.png';
 import Tooltip from '../../utils/Tooltip';
-
 import InputCheckbox from '../../components/InputCheckbox';
 import DataTable from '../DataTable';
 import UseMain from '../../hooks/userMain';
-
+import dados from '../../utils/dados.json'
 
 function Main() {
     const {
@@ -17,7 +17,12 @@ function Main() {
         isPurpleMode,
         isValidateMode,
         isLoading,
-    } = UseMain()
+    } = UseMain();
+
+    const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar o modal
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
 
     return (
         <div>
@@ -29,6 +34,7 @@ function Main() {
                 )}
             </div>
             <div className={styles.checkboxesContainer}>
+            
                 <div>
                     <Tooltip text="Alterar Cores" isPurpleMode={isPurpleMode}>
                         <InputCheckbox
@@ -42,9 +48,11 @@ function Main() {
                         />
                     </Tooltip>
                 </div>
+                
             </div>
             <div className={`${styles.container} ${isPurpleMode ? styles['purple-background'] : ''}`}>
                 <div className={styles.centeredContent}>
+                <button onClick={openModal} className={styles.openModalButton}>Mostrar Números</button>
                     <Input
                         label="Consulte sua Encomenda:"
                         className={styles.customInput}
@@ -53,7 +61,27 @@ function Main() {
                         isPurpleMode={isPurpleMode}
                     />
                 </div>
+                
             </div>
+
+            {/* Botão para abrir o modal */}
+          
+
+            {/* Modal */}
+            {isModalOpen && (
+                <div className={styles.modal}>
+                    <div className={styles.modalContent}>
+                        <h2>Números das Encomendas</h2>
+                        <ul>
+                            {dados.encomendas.map((encomenda) => (
+                                <li key={encomenda.id}>{encomenda.numero}</li>
+                            ))}
+                        </ul>
+                        <button onClick={closeModal}>Fechar</button>
+                    </div>
+                </div>
+            )}
+
             <DataTable
                 isValidateMode={isValidateMode}
                 isLoading={isLoading}
